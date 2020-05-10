@@ -73,10 +73,10 @@ def form_delete_post(city_id):
     return redirect("/", code=302)
 
 
-@app.route('/api/v1/cities', methods=['GET'])
+@app.route('/api/v1/hws', methods=['GET'])
 def api_browse() -> str:
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM tblCitiesImport')
+    cursor.execute('SELECT * FROM bmiData')
     result = cursor.fetchall()
     json_result = json.dumps(result);
     resp = Response(json_result, status=200, mimetype='application/json')
