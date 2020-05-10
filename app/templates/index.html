@@ -3,15 +3,15 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">Height</th>
-        <th scope="col">Weight</th>
+        <th scope="col">Height (Inches)</th>
+        <th scope="col">Weight (Lbs)</th>
 
     </tr>
     </thead>
     <tbody>
     {% for hw in hws %}
     <tr>
-        <td><a href="view/{{hw.Height_Inches}}">{{ hw.Height_Inches }}</a></td>
+        <td><a href="view/{{hw.id}}">{{ hw.Height_Inches }}</a></td>
         <td>{{ hw.Weight_Pounds }}</td>
     </tr>
     {% endfor %}
