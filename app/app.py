@@ -44,11 +44,8 @@ def form_edit_get(city_id):
 @app.route('/edit/<int:city_id>', methods=['POST'])
 def form_update_post(city_id):
     cursor = mysql.get_db().cursor()
-    inputData = (request.form.get('fldName'), request.form.get('fldLat'), request.form.get('fldLong'),
-                 request.form.get('fldCountry'), request.form.get('fldAbbreviation'),
-                 request.form.get('fldCapitalStatus'), request.form.get('fldPopulation'), city_id)
-    sql_update_query = """UPDATE tblCitiesImport t SET t.fldName = %s, t.fldLat = %s, t.fldLong = %s, t.fldCountry = 
-    %s, t.fldAbbreviation = %s, t.fldCapitalStatus = %s, t.fldPopulation = %s WHERE t.id = %s """
+    inputData = (request.form.get('Height_Inches'), request.form.get('Weight_Pounds'), city_id)
+    sql_update_query = """UPDATE bmiData t SET t.Height_Inches = %s, t.Weight_Pounds = %s WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
