@@ -107,11 +107,16 @@ def api_add() -> str:
     return resp
 
 
-@app.route('/api/v1/cities/<int:city_id>', methods=['PUT'])
+@app.route('/api/v1/hws/<int:city_id>', methods=['PUT'])
 def api_edit(city_id) -> str:
-    resp = Response(status=201, mimetype='application/json')
+    cursor = mysql.get_db().cursor()
+    content = request.json
+    inputData = (content['Index_HW'], content['Height_Inches'], content['Weight_Pounds'],city_id)
+    sql_update_query = """UPDATE bmiData t SET t.Index_HW = %s, t.Height_Inches = %s, t.Weight_Pounds = %s WHERE t.id = %s """
+    cursor.execute(sql_update_query, inputData)
+    mysql.get_db().commit()
+    resp = Response(status=200, mimetype='application/json')
     return resp
-
 
 @app.route('/api/v1/hws/<int:city_id>', methods=['DELETE'])
 def api_delete(city_id) -> str:

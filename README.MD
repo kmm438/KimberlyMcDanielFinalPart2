@@ -9,6 +9,11 @@ A: Project showing postman listing all records
 B. Project showing postman showing one record with a get request
 ![Image](screenshots/b.png)
 
+d.	Project showing postman edit a record by showing the put request and the results in the record listing
+![Image](screenshots/D.png)
+
+![Image](screenshots/D2.png)
+
 e.	Project showing postman delete a record by showing the delete request and the results in the record listing
 ![Image](screenshots/e.png)
 
