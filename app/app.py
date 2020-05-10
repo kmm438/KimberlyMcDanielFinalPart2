@@ -100,7 +100,7 @@ def api_add() -> str:
 
     cursor = mysql.get_db().cursor()
     inputData = (content['Index_HW'], content['Height_Inches'], content['Weight_Pounds'])
-    sql_insert_query = """INSERT INTO bmiData (Index_HW, Height_Inches, Weight_Pounds) VALUES ('1',%s,%s) """
+    sql_insert_query = """INSERT INTO bmiData (Index_HW, Height_Inches, Weight_Pounds) VALUES (%s,%s,%s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     resp = Response(status=201, mimetype='application/json')
