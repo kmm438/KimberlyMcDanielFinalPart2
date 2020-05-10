@@ -93,8 +93,16 @@ def api_retrieve(city_id) -> str:
     return resp
 
 
-@app.route('/api/v1/cities/', methods=['POST'])
+@app.route('/api/v1/hws', methods=['POST'])
 def api_add() -> str:
+
+    content = request.json
+
+    cursor = mysql.get_db().cursor()
+    inputData = (content['Index_HW'], content['Height_Inches'], content['Weight_Pounds'])
+    sql_insert_query = """INSERT INTO bmiData (Index_HW, Height_Inches, Weight_Pounds) VALUES ('1',%s,%s) """
+    cursor.execute(sql_insert_query, inputData)
+    mysql.get_db().commit()
     resp = Response(status=201, mimetype='application/json')
     return resp
 
@@ -105,9 +113,13 @@ def api_edit(city_id) -> str:
     return resp
 
 
-@app.route('/api/cities/<int:city_id>', methods=['DELETE'])
+@app.route('/api/v1/hws/<int:city_id>', methods=['DELETE'])
 def api_delete(city_id) -> str:
-    resp = Response(status=210, mimetype='application/json')
+    cursor = mysql.get_db().cursor()
+    sql_delete_query = """DELETE FROM bmiData WHERE id = %s """
+    cursor.execute(sql_delete_query, city_id)
+    mysql.get_db().commit()
+    resp = Response(status=200, mimetype='application/json')
     return resp
 
 
