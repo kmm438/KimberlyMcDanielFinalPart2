@@ -29,9 +29,9 @@ def index():
 @app.route('/view/<int:city_id>', methods=['GET'])
 def record_view(city_id):
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM tblCitiesImport WHERE id=%s', city_id)
+    cursor.execute('SELECT * FROM bmiData WHERE id=%s', city_id)
     result = cursor.fetchall()
-    return render_template('view.html', title='View Form', city=result[0])
+    return render_template('view.html', title='View Form', hws=result[0])
 
 
 @app.route('/edit/<int:city_id>', methods=['GET'])
