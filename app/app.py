@@ -20,9 +20,10 @@ mysql.init_app(app)
 def index():
     user = {'username': 'Cities Project'}
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM tblCitiesImport')
+    cursor.execute('SELECT * FROM bmiData')
     result = cursor.fetchall()
-    return render_template('index.html', title='Home', user=user, cities=result)
+    print("**************************" , result)
+    return render_template('index.html', title='Home', user=user, hws=result)
 
 
 @app.route('/view/<int:city_id>', methods=['GET'])
