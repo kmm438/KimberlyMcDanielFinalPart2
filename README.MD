@@ -20,3 +20,8 @@ e.	Project showing a record being successfully updated
 ![Image](screenshots/06.png)
 
 f.	Project showing a record being deleted
+![Image](screenshots/07.png)
+
+![Image](screenshots/08.png)
+
+![Image](screenshots/09.png)
