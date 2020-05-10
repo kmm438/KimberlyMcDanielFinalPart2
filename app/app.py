@@ -50,9 +50,9 @@ def form_update_post(city_id):
     mysql.get_db().commit()
     return redirect("/", code=302)
 
-@app.route('/cities/new', methods=['GET'])
+@app.route('/bmi/new', methods=['GET'])
 def form_insert_get():
-    return render_template('new.html', title='New City Form')
+    return render_template('new.html', title='New BMI Form')
 
 
 @app.route('/cities/new', methods=['POST'])
