@@ -3,6 +3,7 @@ Part 2 of the final project turn in assignment.
 
 ## Word doc with screenshots
 [Final Project Part2.docx](/Final Project Part 2.docx)
+[This link](/Final Project Part 2.docx) has no title attribute.
 
 ## Screenshots 
 
