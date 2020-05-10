@@ -13,6 +13,11 @@ C. Project running showing an individual data record
 ![Image](screenshots/03.png)
 
 d.	Project showing a new data record being successfully added
+![Image](screenshots/d01.png)
+
+![Image](screenshots/d02.png)
+
+![Image](screenshots/d03.png)
 
 e.	Project showing a record being successfully updated
 ![Image](screenshots/05.png)
